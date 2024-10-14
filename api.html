@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="API Reference" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://biocypher.org/api.html" />
@@ -18,9 +18,11 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>API Reference &mdash; BioCypher</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -52,7 +54,7 @@
             BioCypher
           </a>
               <div class="version">
-                0.5.32
+                0.6.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -71,12 +73,12 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html#configuration">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adapters.html">Adapters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output/index.html">Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/pandas_tutorial.html">Example Notebook: BioCypher and Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial - Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial-ontology.html">Tutorial - Handling Ontologies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial-adapter.html">Tutorial - Adapters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neo4j.html">Interacting with Neo4j</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neo4j.html#tutorial-neo4j">Tutorial - Neo4j</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standalone-docker-image.html">Standalone Docker Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="r-bioc.html">R and Bioconductor</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-main-biocypher-interface">The main BioCypher interface</a></li>
@@ -156,24 +158,39 @@ admin import statement to be used for creating a Neo4j database
 functions are also available in the wrapper function
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">BioCypher.summary()</span></code>. See the <a class="reference internal" href="modules/biocypher.BioCypher.html#biocypher.BioCypher" title="biocypher.BioCypher"><code class="xref py py-class docutils literal notranslate"><span class="pre">BioCypher</span></code></a> <a class="reference internal" href="#api-core"><span class="std std-ref">class</span></a> for more information.</p>
 </div>
-<p>Details about the <a class="reference internal" href="#module-biocypher._write" title="biocypher._write"><code class="xref py py-mod docutils literal notranslate"><span class="pre">biocypher._write</span></code></a> module responsible for these methods
-can be found below.</p>
-<span class="target" id="module-biocypher._write"></span><table class="autosummary longtable docutils align-default">
+<p>Details about the <a class="reference internal" href="#module-biocypher.output.write" title="biocypher.output.write"><code class="xref py py-mod docutils literal notranslate"><span class="pre">biocypher.output.write</span></code></a> module responsible for these
+methods can be found below.</p>
+<span class="target" id="module-biocypher.output.write"></span><table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._write.get_writer.html#biocypher._write.get_writer" title="biocypher._write.get_writer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_writer</span></code></a>(dbms, translator, deduplicator, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher.output.write._get_writer.get_writer.html#biocypher.output.write._get_writer.get_writer" title="biocypher.output.write._get_writer.get_writer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_get_writer.get_writer</span></code></a>(dbms, translator, ...)</p></td>
 <td><p>Function to return the writer class based on the selection in the config file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher._write._BatchWriter.html#biocypher._write._BatchWriter" title="biocypher._write._BatchWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_BatchWriter</span></code></a>(translator, deduplicator, delimiter)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher.output.write._writer._Writer.html#biocypher.output.write._writer._Writer" title="biocypher.output.write._writer._Writer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_writer._Writer</span></code></a>(translator, deduplicator[, ...])</p></td>
+<td><p>Abstract class for writing node and edge representations to disk.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._write._Neo4jBatchWriter.html#biocypher._write._Neo4jBatchWriter" title="biocypher._write._Neo4jBatchWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_Neo4jBatchWriter</span></code></a>(translator, deduplicator, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher.output.write._batch_writer._BatchWriter.html#biocypher.output.write._batch_writer._BatchWriter" title="biocypher.output.write._batch_writer._BatchWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_batch_writer._BatchWriter</span></code></a>(translator, ...)</p></td>
+<td><p>Abstract batch writer class</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher.output.write.graph._neo4j._Neo4jBatchWriter.html#biocypher.output.write.graph._neo4j._Neo4jBatchWriter" title="biocypher.output.write.graph._neo4j._Neo4jBatchWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graph._neo4j._Neo4jBatchWriter</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Class for writing node and edge representations to disk using the format specified by Neo4j for the use of admin import.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher._write._PostgreSQLBatchWriter.html#biocypher._write._PostgreSQLBatchWriter" title="biocypher._write._PostgreSQLBatchWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PostgreSQLBatchWriter</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher.output.write.graph._arangodb._ArangoDBBatchWriter.html#biocypher.output.write.graph._arangodb._ArangoDBBatchWriter" title="biocypher.output.write.graph._arangodb._ArangoDBBatchWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graph._arangodb._ArangoDBBatchWriter</span></code></a>(*args, ...)</p></td>
+<td><p>Class for writing node and edge representations to disk using the format specified by ArangoDB for the use of &quot;arangoimport&quot;.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher.output.write.graph._rdf._RDFWriter.html#biocypher.output.write.graph._rdf._RDFWriter" title="biocypher.output.write.graph._rdf._RDFWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graph._rdf._RDFWriter</span></code></a>(translator, ...[, ...])</p></td>
+<td><p>Class to write BioCypher's property graph into an RDF format using rdflib and all the extensions it supports (RDF/XML, N3, NTriples, N-Quads, Turtle, TriX, Trig and JSON-LD).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher.output.write.graph._networkx._NetworkXWriter.html#biocypher.output.write.graph._networkx._NetworkXWriter" title="biocypher.output.write.graph._networkx._NetworkXWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graph._networkx._NetworkXWriter</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Class for writing node and edges to a networkx DiGraph.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher.output.write.relational._postgresql._PostgreSQLBatchWriter.html#biocypher.output.write.relational._postgresql._PostgreSQLBatchWriter" title="biocypher.output.write.relational._postgresql._PostgreSQLBatchWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relational._postgresql._PostgreSQLBatchWriter</span></code></a>(...)</p></td>
 <td><p>Class for writing node and edge representations to disk using the format specified by PostgreSQL for the use of &quot;COPY FROM...&quot;.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._write._ArangoDBBatchWriter.html#biocypher._write._ArangoDBBatchWriter" title="biocypher._write._ArangoDBBatchWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_ArangoDBBatchWriter</span></code></a>(translator, ...[, ...])</p></td>
-<td><p>Class for writing node and edge representations to disk using the format specified by ArangoDB for the use of &quot;arangoimport&quot;.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher.output.write.relational._sqlite._SQLiteBatchWriter.html#biocypher.output.write.relational._sqlite._SQLiteBatchWriter" title="biocypher.output.write.relational._sqlite._SQLiteBatchWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relational._sqlite._SQLiteBatchWriter</span></code></a>(*args, ...)</p></td>
+<td><p>Class for writing node and edge representations to a SQLite database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher.output.write.relational._csv._PandasCSVWriter.html#biocypher.output.write.relational._csv._PandasCSVWriter" title="biocypher.output.write.relational._csv._PandasCSVWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relational._csv._PandasCSVWriter</span></code></a>(*args[, ...])</p></td>
+<td><p>Class for writing node and edge representations to a CSV file.</p></td>
 </tr>
 </tbody>
 </table>
@@ -193,11 +210,11 @@ Example usage:</p>
 <span class="n">dfs</span> <span class="o">=</span> <span class="n">bc</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Details about the <a class="reference internal" href="#module-biocypher._pandas" title="biocypher._pandas"><code class="xref py py-mod docutils literal notranslate"><span class="pre">biocypher._pandas</span></code></a> module responsible for these methods
-can be found below.</p>
-<span class="target" id="module-biocypher._pandas"></span><table class="autosummary longtable docutils align-default">
+<p>Details about the <a class="reference internal" href="#module-biocypher.output.in_memory" title="biocypher.output.in_memory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">biocypher.output.in_memory</span></code></a> module responsible for these
+methods can be found below.</p>
+<span class="target" id="module-biocypher.output.in_memory"></span><table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._pandas.Pandas.html#biocypher._pandas.Pandas" title="biocypher._pandas.Pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pandas</span></code></a>(translator, deduplicator)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher.output.in_memory._pandas.Pandas.html#biocypher.output.in_memory._pandas.Pandas" title="biocypher.output.in_memory._pandas.Pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_pandas.Pandas</span></code></a>(translator, deduplicator)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -220,14 +237,14 @@ example:</p>
 <span class="n">bc</span><span class="o">.</span><span class="n">merge_edges</span><span class="p">(</span><span class="n">edge_set_2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Details about the <a class="reference internal" href="#module-biocypher._connect" title="biocypher._connect"><code class="xref py py-mod docutils literal notranslate"><span class="pre">biocypher._connect</span></code></a> module responsible for these methods
-can be found below.</p>
-<span class="target" id="module-biocypher._connect"></span><table class="autosummary longtable docutils align-default">
+<p>Details about the <a class="reference internal" href="#module-biocypher.output.connect" title="biocypher.output.connect"><code class="xref py py-mod docutils literal notranslate"><span class="pre">biocypher.output.connect</span></code></a> module responsible for these
+methods can be found below.</p>
+<span class="target" id="module-biocypher.output.connect"></span><table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._connect.get_driver.html#biocypher._connect.get_driver" title="biocypher._connect.get_driver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_driver</span></code></a>(dbms, translator)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher.output.connect._neo4j_driver.get_driver.html#biocypher.output.connect._neo4j_driver.get_driver" title="biocypher.output.connect._neo4j_driver.get_driver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_neo4j_driver.get_driver</span></code></a>(dbms, translator)</p></td>
 <td><p>Function to return the writer class.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher._connect._Neo4jDriver.html#biocypher._connect._Neo4jDriver" title="biocypher._connect._Neo4jDriver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_Neo4jDriver</span></code></a>(database_name, uri, user, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher.output.connect._neo4j_driver._Neo4jDriver.html#biocypher.output.connect._neo4j_driver._Neo4jDriver" title="biocypher.output.connect._neo4j_driver._Neo4jDriver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_neo4j_driver._Neo4jDriver</span></code></a>(database_name, ...)</p></td>
 <td><p>Manages a BioCypher connection to a Neo4j database using the <code class="docutils literal notranslate"><span class="pre">neo4j_utils.Driver</span></code> class.</p></td>
 </tr>
 </tbody>
@@ -236,46 +253,71 @@ can be found below.</p>
 <section id="download-and-cache-functionality">
 <h2>Download and cache functionality<a class="headerlink" href="#download-and-cache-functionality" title="Permalink to this heading"></a></h2>
 <p>BioCypher provides a download and cache functionality for resources. Resources
-are defined via the <code class="docutils literal notranslate"><span class="pre">Resource</span></code> class, which have a name, a (set of) URL(s),
-and a lifetime (in days, set to 0 for infinite). The <code class="docutils literal notranslate"><span class="pre">Downloader</span></code> can deal
-with single and lists of files, compressed files, and directories (which needs
-to be indicated using the <code class="docutils literal notranslate"><span class="pre">is_dir</span></code> parameter of the resource). It uses <a class="reference external" href="https://www.fatiando.org/pooch/latest/">Pooch</a> under the hood to handle the
-downloads. Example usage:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biocypher</span> <span class="kn">import</span> <span class="n">BioCypher</span><span class="p">,</span> <span class="n">Resource</span>
+are defined via the abstract <code class="docutils literal notranslate"><span class="pre">Resource</span></code> class, which have a name, a (set of)
+URL(s), and a lifetime (in days, set to 0 for infinite). Two classes inherit
+from the <code class="docutils literal notranslate"><span class="pre">Resource</span></code> class, the <code class="docutils literal notranslate"><span class="pre">FileDownload</span></code> class and <code class="docutils literal notranslate"><span class="pre">APIRequest</span></code>
+class. The <code class="docutils literal notranslate"><span class="pre">Downloader</span></code> can deal with single files, lists of files, compressed
+files, and directories (which needs to be indicated using the <code class="docutils literal notranslate"><span class="pre">is_dir</span></code>
+parameter of the <code class="docutils literal notranslate"><span class="pre">FileDownload</span></code>). It uses <a class="reference external" href="https://www.fatiando.org/pooch/latest/">Pooch</a> under the hood to handle the
+downloading of files and Python’s <a class="reference external" href="https://pypi.org/project/requests/">requests</a> library to perform API requests. Example
+usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biocypher</span> <span class="kn">import</span> <span class="n">BioCypher</span><span class="p">,</span> <span class="n">FileDownload</span><span class="p">,</span> <span class="n">APIRequest</span>
 <span class="n">bc</span> <span class="o">=</span> <span class="n">BioCypher</span><span class="p">()</span>
 
-<span class="n">resource1</span> <span class="o">=</span> <span class="n">Resource</span><span class="p">(</span>
-   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;file_list_resource&quot;</span><span class="p">,</span>
-   <span class="n">url_s</span><span class="o">=</span><span class="p">[</span>
-      <span class="s2">&quot;https://example.com/resource1.txt&quot;</span>
-      <span class="s2">&quot;https://example.com/resource2.txt&quot;</span>
-   <span class="p">],</span>
-   <span class="n">lifetime</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">resource1</span> <span class="o">=</span> <span class="n">FileDownload</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;file_list_resource&quot;</span><span class="p">,</span>
+    <span class="n">url_s</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;https://example.com/file_download1.txt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://example.com/file_download2.txt&quot;</span>
+    <span class="p">],</span>
+    <span class="n">lifetime</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
-<span class="n">resource2</span> <span class="o">=</span> <span class="n">Resource</span><span class="p">(</span>
-   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;zipped_resource&quot;</span><span class="p">,</span>
-   <span class="n">url_s</span><span class="o">=</span><span class="s2">&quot;https://example.com/resource3.zip&quot;</span><span class="p">,</span>
-   <span class="n">lifetime</span><span class="o">=</span><span class="mi">7</span>
+<span class="n">resource2</span> <span class="o">=</span> <span class="n">FileDownload</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;zipped_resource&quot;</span><span class="p">,</span>
+    <span class="n">url_s</span><span class="o">=</span><span class="s2">&quot;https://example.com/file_download3.zip&quot;</span><span class="p">,</span>
+    <span class="n">lifetime</span><span class="o">=</span><span class="mi">7</span>
 <span class="p">)</span>
-<span class="n">resource3</span> <span class="o">=</span> <span class="n">Resource</span><span class="p">(</span>
-   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;directory_resource&quot;</span><span class="p">,</span>
-   <span class="n">url_s</span><span class="o">=</span><span class="s2">&quot;https://example.com/resource4/&quot;</span><span class="p">,</span>
-   <span class="n">lifetime</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
-   <span class="n">is_dir</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="n">resource3</span> <span class="o">=</span> <span class="n">FileDownload</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;directory_resource&quot;</span><span class="p">,</span>
+    <span class="n">url_s</span><span class="o">=</span><span class="s2">&quot;https://example.com/file_download4/&quot;</span><span class="p">,</span>
+    <span class="n">lifetime</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+    <span class="n">is_dir</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="n">resource4</span> <span class="o">=</span> <span class="n">APIRequest</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;list_api_request&quot;</span><span class="p">,</span>
+    <span class="n">url_s</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;https://api.example.org/api_request1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://api.example.org/api_request2&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">life_time</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">resource5</span> <span class="o">=</span> <span class="n">APIRequest</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;api_request&quot;</span><span class="p">,</span>
+    <span class="n">url_s</span><span class="o">=</span><span class="s2">&quot;https://api.example.org/api_request1&quot;</span><span class="p">,</span>
+    <span class="n">life_time</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">resource_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">resource1</span><span class="p">,</span> <span class="n">resource2</span><span class="p">,</span> <span class="n">resource3</span><span class="p">,</span> <span class="n">resource4</span><span class="p">,</span> <span class="n">resource5</span><span class="p">]</span>
 <span class="n">paths</span> <span class="o">=</span> <span class="n">bc</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">resource_list</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The files will be stored in the cache directory, in subfolders according to the
-names of the resources, and additionally determined by Pooch (e.g. extraction).
-All paths of downloaded files are returned by the <code class="docutils literal notranslate"><span class="pre">download</span></code> method. The
-<code class="docutils literal notranslate"><span class="pre">Downloader</span></code> class can also be used directly, without the BioCypher instance.
-You can set the cache directory in the configuration file; if not set, it will
-use the <code class="docutils literal notranslate"><span class="pre">TemporaryDirectory.name()</span></code> method from the <code class="docutils literal notranslate"><span class="pre">tempfile</span></code> module. More
-details about the <code class="docutils literal notranslate"><span class="pre">Resource</span></code> and <code class="docutils literal notranslate"><span class="pre">Downloader</span></code> classes can be found below.</p>
+<p>The files and API requests will be stored in the cache directory, in subfolders
+according to the names of the resources, and additionally determined by Pooch
+(e.g., extraction of zip files can result in multiple new files). All paths of
+downloaded files are returned by the <code class="docutils literal notranslate"><span class="pre">download</span></code> method. The <code class="docutils literal notranslate"><span class="pre">Downloader</span></code>
+class can also be used directly, without the BioCypher instance. You can set
+the cache directory in the configuration file; if not set, it will use the
+<code class="docutils literal notranslate"><span class="pre">TemporaryDirectory.name()</span></code> method from the <code class="docutils literal notranslate"><span class="pre">tempfile</span></code> module. More details
+about the <code class="docutils literal notranslate"><span class="pre">Resource</span></code> , <code class="docutils literal notranslate"><span class="pre">FileDownload</span></code> , <code class="docutils literal notranslate"><span class="pre">APIRequest</span></code> and <code class="docutils literal notranslate"><span class="pre">Downloader</span></code>
+classes can be found below.</p>
 <span class="target" id="module-biocypher._get"></span><table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._get.Resource.html#biocypher._get.Resource" title="biocypher._get.Resource"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Resource</span></code></a>(name, url_s[, lifetime, is_dir])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._get.Resource.html#biocypher._get.Resource" title="biocypher._get.Resource"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Resource</span></code></a>(name, url_s[, lifetime])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher._get.APIRequest.html#biocypher._get.APIRequest" title="biocypher._get.APIRequest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">APIRequest</span></code></a>(name, url_s[, lifetime])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._get.FileDownload.html#biocypher._get.FileDownload" title="biocypher._get.FileDownload"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FileDownload</span></code></a>(name, url_s[, lifetime, is_dir])</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher._get.Downloader.html#biocypher._get.Downloader" title="biocypher._get.Downloader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Downloader</span></code></a>([cache_dir])</p></td>
@@ -353,7 +395,7 @@ details about the <code class="docutils literal notranslate"><span class="pre">R
 <tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher._misc.ensure_iterable.html#biocypher._misc.ensure_iterable" title="biocypher._misc.ensure_iterable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ensure_iterable</span></code></a>(value)</p></td>
 <td><p>Returns iterables, except strings, wraps simple types into tuple.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._misc.create_tree_visualisation.html#biocypher._misc.create_tree_visualisation" title="biocypher._misc.create_tree_visualisation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_tree_visualisation</span></code></a>(inheritance_tree)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._misc.create_tree_visualisation.html#biocypher._misc.create_tree_visualisation" title="biocypher._misc.create_tree_visualisation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_tree_visualisation</span></code></a>(inheritance_graph)</p></td>
 <td><p>Creates a visualisation of the inheritance tree using treelib.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher._misc.from_pascal.html#biocypher._misc.from_pascal" title="biocypher._misc.from_pascal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_pascal</span></code></a>(s[, sep])</p></td>
@@ -368,7 +410,7 @@ details about the <code class="docutils literal notranslate"><span class="pre">R
 <tr class="row-odd"><td><p><a class="reference internal" href="modules/biocypher._misc.sentencecase_to_snakecase.html#biocypher._misc.sentencecase_to_snakecase" title="biocypher._misc.sentencecase_to_snakecase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sentencecase_to_snakecase</span></code></a>(s)</p></td>
 <td><p>Convert sentence case to snake_case.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher._misc.sentencecase_to_pascalcase.html#biocypher._misc.sentencecase_to_pascalcase" title="biocypher._misc.sentencecase_to_pascalcase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sentencecase_to_pascalcase</span></code></a>(s)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/biocypher._misc.sentencecase_to_pascalcase.html#biocypher._misc.sentencecase_to_pascalcase" title="biocypher._misc.sentencecase_to_pascalcase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sentencecase_to_pascalcase</span></code></a>(s[, sep])</p></td>
 <td><p>Convert sentence case to PascalCase.</p></td>
 </tr>
 </tbody>
@@ -387,7 +429,7 @@ details about the <code class="docutils literal notranslate"><span class="pre">R
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021-2023, BioCypher developers.</p>
+    <p>&#169; Copyright 2021-2024, BioCypher developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,7 +1,7 @@
-﻿biocypher.\_write.\_PostgreSQLBatchWriter
-=========================================
+﻿biocypher.output.write.relational.\_postgresql.\_PostgreSQLBatchWriter
+======================================================================
 
-.. currentmodule:: biocypher._write
+.. currentmodule:: biocypher.output.write.relational._postgresql
 
 .. autoclass:: _PostgreSQLBatchWriter
 
@@ -29,6 +29,5 @@
    
       ~_PostgreSQLBatchWriter.DATA_TYPE_LOOKUP
       ~_PostgreSQLBatchWriter.import_call_file_prefix
-      ~_PostgreSQLBatchWriter.outdir
    
    

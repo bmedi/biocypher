@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="<no title>" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://biocypher.org/contents.html" />
 <meta property="og:site_name" content="BioCypher" />
-<meta property="og:description" content="Table of Contents: Democratising Knowledge Graphs- Mission Statement, Connect your Knowledge Graph to Large Language Models., User Experiences- A Knowledge Graph for Impact of Genomic Variation on ..." />
+<meta property="og:description" content="Table of Contents: Democratising Knowledge Graphs- Mission Statement, Vision Statement, Connect your Knowledge Graph to Large Language Models., User Experiences- A Knowledge Graph for Impact of Gen..." />
 <meta property="og:image" content="https://biocypher.org/_images/biocypher-open-graph.png" />
 <meta property="og:image:alt" content="BioCypher" />
-<meta name="description" content="Table of Contents: Democratising Knowledge Graphs- Mission Statement, Connect your Knowledge Graph to Large Language Models., User Experiences- A Knowledge Graph for Impact of Genomic Variation on ..." />
+<meta name="description" content="Table of Contents: Democratising Knowledge Graphs- Mission Statement, Vision Statement, Connect your Knowledge Graph to Large Language Models., User Experiences- A Knowledge Graph for Impact of Gen..." />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://biocypher.org" />
 <meta property="twitter:title" content="Democratising Knowledge Graphs - BioCypher" />
@@ -18,9 +18,11 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>&lt;no title&gt; &mdash; BioCypher</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -51,7 +53,7 @@
             BioCypher
           </a>
               <div class="version">
-                0.5.32
+                0.6.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -70,12 +72,12 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html#configuration">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adapters.html">Adapters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output/index.html">Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/pandas_tutorial.html">Example Notebook: BioCypher and Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial - Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial-ontology.html">Tutorial - Handling Ontologies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial-adapter.html">Tutorial - Adapters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neo4j.html">Interacting with Neo4j</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neo4j.html#tutorial-neo4j">Tutorial - Neo4j</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standalone-docker-image.html">Standalone Docker Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="r-bioc.html">R and Bioconductor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 </ul>
@@ -109,6 +111,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Democratising Knowledge Graphs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#mission-statement">Mission Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#vision-statement">Vision Statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#connect-your-knowledge-graph-to-large-language-models">Connect your Knowledge Graph to Large Language Models</a></li>
 </ul>
 </li>
@@ -126,8 +129,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html#configuration">Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#biocypher-settings">BioCypher settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#neo4j-settings">Neo4j settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#postgresql-settings">PostgreSQL settings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
@@ -139,6 +140,16 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="adapters.html">Adapters</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="adapters.html#biocypher-meta-graph">BioCypher meta-graph</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="output/index.html">Output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="output/neo4j.html">Neo4j</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/arangodb.html">ArangoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/csv.html">CSV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/rdf.html">RDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/postgres.html">PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/sqlite.html">SQLite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/networkx.html">NetworkX</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/pandas_tutorial.html">Example Notebook: BioCypher and Pandas</a><ul>
@@ -177,12 +188,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorial-adapter.html#note-strict-mode">Note: Strict mode</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="neo4j.html">Interacting with Neo4j</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="neo4j.html#communication-via-the-neo4j-python-driver">Communication via the Neo4j Python Driver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="neo4j.html#exporting-for-the-neo4j-admin-import-feature">Exporting for the <code class="docutils literal notranslate"><span class="pre">neo4j-admin</span> <span class="pre">import</span></code> feature</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="neo4j.html#tutorial-neo4j">Tutorial - Neo4j</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standalone-docker-image.html">Standalone Docker Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="r-bioc.html">R and Bioconductor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api.html#the-main-biocypher-interface">The main BioCypher interface</a></li>
@@ -211,7 +217,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021-2023, BioCypher developers.</p>
+    <p>&#169; Copyright 2021-2024, BioCypher developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

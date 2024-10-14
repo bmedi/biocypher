@@ -1,0 +1,33 @@
+﻿biocypher.output.write.relational.\_sqlite.\_SQLiteBatchWriter
+==============================================================
+
+.. currentmodule:: biocypher.output.write.relational._sqlite
+
+.. autoclass:: _SQLiteBatchWriter
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~_SQLiteBatchWriter.__init__
+      ~_SQLiteBatchWriter.get_import_call
+      ~_SQLiteBatchWriter.write_edges
+      ~_SQLiteBatchWriter.write_import_call
+      ~_SQLiteBatchWriter.write_nodes
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~_SQLiteBatchWriter.DATA_TYPE_LOOKUP
+      ~_SQLiteBatchWriter.import_call_file_prefix
+   
+   
